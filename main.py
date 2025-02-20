@@ -1,4 +1,6 @@
+# main_script.py
 import subprocess
+from helper import helper_function
 
 def create_git_tag(tag_name, message=None):
     try:
@@ -12,7 +14,7 @@ def create_git_tag(tag_name, message=None):
         subprocess.run(command, check=True)
         print(f"Tag '{tag_name}' berhasil dibuat.")
 
-        # Push hanya tag tertentu ke remote repository
+        # Push tag ke remote repository
         push_command = ['git', 'push', 'origin', tag_name]
         subprocess.run(push_command, check=True)
         print(f"Tag '{tag_name}' berhasil di-push ke remote repository.")
@@ -21,4 +23,5 @@ def create_git_tag(tag_name, message=None):
         print(f"Terjadi kesalahan saat membuat atau mendorong tag: {e}")
 
 if __name__ == "__main__":
-    create_git_tag("v1.0.2", "Release version 1.0.2")
+    helper_function()  # Panggil fungsi dari modul bantuan
+    create_git_tag("v1.0.2", "Release version 1.0.0")
