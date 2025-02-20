@@ -24,4 +24,4 @@ def create_git_tag(tag_name, message=None):
 
 if __name__ == "__main__":
     helper_function()  # Panggil fungsi dari modul bantuan
-    create_git_tag("v1.0.2", "Release version 1.0.0")
+    create_git_tag("v1.0.3", "Release version 1.0.0")
